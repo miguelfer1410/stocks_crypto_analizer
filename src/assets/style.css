@@ -1,0 +1,485 @@
+/* Variáveis de cores modernas */
+:root {
+    --primary-bg: #0a0b1e;
+    --secondary-bg: #1a1b3a;
+    --card-bg: #242645;
+    --accent-color: #6c5ce7;
+    --accent-color-hover: #8075e5;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0c0;
+    --up-color: #00b894;
+    --down-color: #ff7675;
+    --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --card-border: 1px solid rgba(255, 255, 255, 0.18);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+    color: var(--text-primary);
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+/* Container principal com efeito de vidro */
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Container de conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Portfolio section */
+.portfolio-section {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+/* Controls container */
+.controls-container {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 20px;
+    position: relative;
+    z-index: 1000;
+    background: var(--glass-bg);
+    border-radius: 15px;
+    border: var(--card-border);
+}
+
+/* Dropdown personalizado */
+.dropdown {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+}
+
+.Select-control {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 10px !important;
+    color: var(--text-primary) !important;
+}
+
+.Select-menu-outer {
+    background: var(--secondary-bg) !important;
+    border: var(--card-border) !important;
+    border-radius: 10px !important;
+    margin-top: 5px;
+    box-shadow: var(--card-shadow);
+    z-index: 1001 !important;
+}
+
+/* Graph container */
+.graph-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Portfolio Overview Cards */
+.portfolio-overview {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    animation: fadeInUp 0.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+/* Portfolio Table */
+.portfolio-table-container {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    background: var(--glass-bg);
+    border-radius: 15px;
+    border: var(--card-border);
+}
+
+/* Control group */
+.control-group {
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1000;
+}
+
+.control-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+/* Graph */
+.js-plotly-plot {
+    position: relative;
+    z-index: 1;
+}
+
+/* Cabeçalho com animação */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.5s ease;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, var(--accent-color), #a55eea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Cards modernos com efeito de vidro */
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 15px;
+    border: var(--card-border);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+.summary-card {
+    padding: 25px;
+    border-radius: 15px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: var(--card-border);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+}
+
+.summary-card h3 {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.summary-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Tabela moderna */
+.portfolio-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.portfolio-table th {
+    padding: 15px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-align: left;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.portfolio-table tbody tr {
+    background: var(--glass-bg);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-table tbody tr:hover {
+    transform: scale(1.01);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.portfolio-table td {
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Indicadores com animação */
+.trend-up {
+    color: var(--up-color);
+    animation: pulseGreen 2s infinite;
+}
+
+.trend-down {
+    color: var(--down-color);
+    animation: pulseRed 2s infinite;
+}
+
+/* Navegação moderna */
+nav {
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: var(--card-border);
+    padding: 1rem;
+    animation: fadeInDown 0.5s ease;
+    border-radius: 0 0 15px 15px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav ul li a {
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+nav ul li a.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Animações */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulseGreen {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulseRed {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Loading animation */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--accent-color);
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 1400px) {
+    .app-container {
+        max-width: 100%;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .portfolio-overview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-table-container {
+        overflow-x: auto;
+        margin: 30px 10px 0;
+        padding: 10px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .app-container {
+        padding: 10px;
+    }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color-hover);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 11, 30, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--accent-color);
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    color: var(--text-primary);
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
